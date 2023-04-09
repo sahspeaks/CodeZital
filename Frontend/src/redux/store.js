@@ -13,4 +13,4 @@ const store = configureStore({
 
 export default store;
 
-export const server = "https://edumindz.onrender.com";
+export const server = "https://edumindz.onrender.com/api/v1";
