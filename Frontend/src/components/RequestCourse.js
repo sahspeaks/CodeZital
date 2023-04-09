@@ -1,16 +1,31 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-hot-toast";
+import { useDispatch,useSelector} from "react-redux";
+import { request } from "../redux/actions/user";
+
 
 export default function RequestCourse() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [course, setCourse] = useState("");
+  
+  const dispatch = useDispatch();
+  const {loading,message} = useSelector(state=>state.user)
+  const submitHandler = async(e) => {
+    e.preventDefault();
+    await dispatch(request(email,name,course));
+    if(message){
+      toast.success(message)
+    }
+  };
+
   return (
     <div className="w-full flex flex-col justify-center items-center mx-auto mt-20 h-[600px]">
       <div className="mx-auto space-y-12">
         <h1 className="text-2xl font-semibold">Request for a Course</h1>
 
-        <form className="flex flex-col space-y-5">
+        <form onSubmit={submitHandler} className="flex flex-col space-y-5">
           <input
             className="py-3 px-4 font-body w-[300px] bg-slate-100"
             type="text"

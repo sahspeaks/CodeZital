@@ -28,7 +28,7 @@ const Login = () => {
             <h1 className="text-5xl font-extralight mb-2">Hello ,</h1>
             
             <h1 className="font-semibold text-3xl md:text-5xl">
-              FrontEnd Forearms
+              Edumindz
             </h1>
             
           </div>

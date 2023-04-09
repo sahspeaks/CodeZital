@@ -1,5 +1,5 @@
 import express from "express";
-import { contact, courseRequest } from "../controllers/otherController.js";
+import { contact, courseRequest ,NewsltterRequest} from "../controllers/otherController.js";
 import { authorization, isAuthenticated } from "../middlewares/auth.js";
 
 const router = express.Router();
@@ -8,5 +8,6 @@ const router = express.Router();
 router.route("/contact").post(contact);
 //request course
 router.route("/requestcourse").post(courseRequest);
+router.route("/newsletter").post(NewsltterRequest);
 
 export default router;

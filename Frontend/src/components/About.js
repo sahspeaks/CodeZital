@@ -1,37 +1,69 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import aboutimg from "../assets/images/hero.jpg";
+import aboutimg from "../assets/images/2-2.png";
+import './about.css'
 
 export default function About() {
   return (
-    <div className="flex flex-col font-body text-[#363A45] h-[100vh] space-y-10 p-16 items-center justify-center mx-auto">
-      <div>
-        <h1 className="text-3xl md:text-left font-bold uppercase">About us</h1>
-      </div>
-      <div className="flex flex-col space-y-6 mx-auto">
-        <div className="flex flex-col items-center">
-          <img className="rounded-full w-32 h-32 object-cover" src={aboutimg} />
-          <p className="text-gray-500 font-semibold mt-2">Founder</p>
+    <>
+    {/* // <!--main section starts--> */}
+    <section>
+        <div class="main-container">
+            <div class="main-wrap">
+                <div class="special">
+                    <h1 class="main-heading">The Mission behind <span class="main-edu">Edumindz</span></h1>
+                    <p class="main-para">At Edumindz, we are committed to providing high-quality education to students worldwide. Our mission is to empower learners of all ages with the knowledge and skills they need to succeed in their personal and professional lives. By offering a diverse range of courses taught by world-class teachers and fostering a vibrant global student community, we strive to make education accessible, engaging, and transformative for everyone.</p>
+                </div>
+            </div>
         </div>
-        <div className="flex flex-col gap-3 items-center justify-center">
-          <h1 className="text-2xl font-semibold">Karampal Jangir</h1>
-          <p className="mt-1 text-center">
-            Hi, i am a full stack developer. Our mission is to provide quality
-            content at reasonable price.
-          </p>
+    </section>
+    {/* <!--main section ends--> */}
+
+    {/* // <!--students section starts--> */}
+    <section class="stu-section">
+        <div class="main-wraper">
+            <div class="main-stu">
+                <div class="achievements-wrapper">
+                    <div class="achievement-wrapper">
+                        <div class="achievement-number">7,000<span class="font-color-primary">+</span></div>
+                        <div class="achievement-category">STUDENTS</div>
+                    </div>
+                    <div class="spacer achievement"></div>
+                    <div class="achievement-wrapper">
+                        <div class="achievement-number">100<span class="font-color-primary">+</span></div>
+                        <div class="achievement-category">COURSES</div>
+                    </div>
+                    <div class="spacer achievement"></div>
+                    <div class="achievement-wrapper">
+                        <div class="achievement-number">800<span class="font-color-primary">+</span></div>
+                        <div class="achievement-category">5-STAR REVIEWS</div>
+                    </div>
+                    <div class="spacer achievement"></div>
+                    <div class="achievement-wrapper">
+                        <div class="achievement-number">35<span class="font-color-primary">+</span></div>
+                        <div class="achievement-category">teachers</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div className="flex flex-col mt-3 items-center">
-          <p className="text-center font-medium text-lg">
-            We are video streaming platform with some premium courses available
-            only for premium users.
-          </p>
-          <Link to="/courses">
-            <button className="bg-purple-600 hover:bg-purple-800 transition-all ease-in-out duration-200 mt-3 py-3 px-5 text-white font-medium rounded-md">
-              Checkout Our Courses
-            </button>
-          </Link>
-        </div>
-      </div>
-    </div>
+    </section>
+    {/* // <!--students section ends--> */}
+
+    {/* // <!--story section starts--> */}
+
+    <section class="story-section">
+        <h1 class="heading">Our story</h1>
+            <div class="main-story">
+                <div class="story-content">
+                    <p class="s-heading"><strong>Tracing our footsteps: Our journey so far</strong></p>
+                    <p class="s-content">Edumindz was founded in 2022 by a group of passionate educators who wanted to make quality education accessible to students across the globe. The team recognized the need for a platform that provided personalized learning experiences to students, and set out to create just that. Since then, Edumindz has grown into a thriving edtech platform, empowering students and teachers alike through innovative technology and world-class education. Today, we continue to strive towards our mission of transforming the way education is delivered and received, making learning accessible to all.</p>
+                </div>
+                <div>
+                    <img src={aboutimg} alt="about us" width="600"/>
+                </div>
+            </div>
+    </section>
+    {/* <!--story swction starts--> */}
+    </>
   );
 }

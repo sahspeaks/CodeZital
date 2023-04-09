@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import { AiOutlineAlignLeft, AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/Edumindz-main.png";
 
 import { RiLogoutBoxRLine, RiDashboardFill } from "react-icons/ri";
 import { useDispatch } from "react-redux";

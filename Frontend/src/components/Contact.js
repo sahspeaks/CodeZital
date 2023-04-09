@@ -1,21 +1,37 @@
 import React, { useState } from "react";
+import { toast } from "react-hot-toast";
+
 import { Link } from "react-router-dom";
+import { useDispatch} from "react-redux";
+import { contact } from "../redux/actions/user";
+
 
 export default function () {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
 
+  const dispatch = useDispatch();
+
+  const submitHandler = async(e) => {
+    e.preventDefault();
+
+    await dispatch(contact(email,name,message));
+    if(message){
+      toast.success(message)
+    }
+  };
+
   return (
     <div className="w-full flex flex-col font-body justify-center text-[#363A45] items-center mx-aut0 h-[100vh]">
       <div className="mx-auto space-y-12">
         <h1 className="text-3xl md:text-left font-bold uppercase">Contact us</h1>
 
-        <form className="flex flex-col space-y-5">
+        <form onSubmit={submitHandler} className="flex flex-col space-y-5">
           <input
             className="py-3 px-4 font-body w-[300px] bg-slate-200"
             type="text"
-            required
+            
             id="name"
             value={name}
             onChange={(e) => {
@@ -26,7 +42,7 @@ export default function () {
           <input
             className="py-3 px-4 font-body w-[300px] bg-slate-200"
             type="email"
-            required
+            
             id="email"
             value={email}
             onChange={(e) => {
@@ -37,7 +53,7 @@ export default function () {
           <textarea
             className="py-3 bg-slate-200 px-4 font-body w-[300px]"
             type="message"
-            required
+            
             id="message"
             value={message}
             onChange={(e) => {
@@ -45,12 +61,13 @@ export default function () {
             }}
             placeholder="Your Message"
           />
-
+          
           <button
             type="submit"
             className="bg-purple-600 hover:bg-purple-800 transition-all ease-in-out duration-200 py-3 text-white font-medium"
+
           >
-            Send Mail
+          Send Mail
           </button>
           <p>
             Request for a course ?{" "}

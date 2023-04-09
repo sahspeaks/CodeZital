@@ -66,3 +66,48 @@ export const register = (formData) => async (dispatch) => {
     dispatch({ type: "registerFail", payload: error.response.data.message });
   }
 };
+export const contact = (email,name,message) => async (dispatch) => {
+  try {
+    // console.log(email,name,message);
+    dispatch({ type: "registerRequest" });
+    const { data } = await axios.post(`${server}/contact`, {email,name,message}, {
+      headers: {
+        "Content-type": "application/json",
+      },
+      withCredentials: true,
+    });
+    dispatch({ type: "registerSuccess", payload: data });
+  } catch (error) {
+    dispatch({ type: "registerFail", payload: error.response.data.message });
+  }
+};
+export const request = (email,name,course) => async (dispatch) => {
+  try {
+    // console.log(email,name,message);
+    dispatch({ type: "registerRequest" });
+    const { data } = await axios.post(`${server}/requestcourse`, {email,name,course}, {
+      headers: {
+        "Content-type": "application/json",
+      },
+      withCredentials: true,
+    });
+    dispatch({ type: "registerSuccess", payload: data });
+  } catch (error) {
+    dispatch({ type: "registerFail", payload: error.response.data.message });
+  }
+};
+export const newsletter = (email) => async (dispatch) => {
+  try {
+    // console.log(email,name,message);
+    dispatch({ type: "registerRequest" });
+    const { data } = await axios.post(`${server}/newsletter`, {email}, {
+      headers: {
+        "Content-type": "application/json",
+      },
+      withCredentials: true,
+    });
+    dispatch({ type: "registerSuccess", payload: data });
+  } catch (error) {
+    dispatch({ type: "registerFail", payload: error.response.data.message });
+  }
+};
