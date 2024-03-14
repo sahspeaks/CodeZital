@@ -16,7 +16,7 @@ app.use(
     extended: true,
   })
 );
-const FRONTEND_URL="http://localhost:3000";
+const FRONTEND_URL="https://edumindz.netlify.app";
 app.use(cookieParser());
 app.use(
   cors({
